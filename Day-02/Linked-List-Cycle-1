@@ -1,0 +1,17 @@
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if head == None or head.next == None:
+            return False
+        
+        first = head
+        second = head
+        while first.next != None and first.next.next != None:
+            first = first.next.next
+            second = second.next
+            if first == second:
+                return True
+            
+        return False
