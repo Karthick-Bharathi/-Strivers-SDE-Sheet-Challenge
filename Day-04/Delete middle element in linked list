@@ -1,0 +1,18 @@
+ def deleteMiddle(self, head):
+        if head.next == None:
+            return 
+        curr = head
+        prev = curr
+        count = 0
+        while curr!=None:
+            count += 1
+            curr = curr.next
+        count1 = 0
+        curr = head
+        while count1 != count//2:
+            prev = curr
+            curr = curr.next
+            count1 += 1
+        prev.next = curr.next
+        curr.next = None
+        return head
